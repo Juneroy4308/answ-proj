@@ -1,0 +1,1085 @@
+nginx-dev-container       | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx-dev-container       | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx-dev-container       | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+frontend-dev-container    | 
+postgresql-dev-container  | 
+postgresql-dev-container  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgresql-dev-container  | 
+api-dev-container         | warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
+api-dev-container         |       Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (730ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE DATABASE "Answear";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "__EFMigrationsHistory" (
+api-dev-container         |           "MigrationId" character varying(150) NOT NULL,
+api-dev-container         |           "ProductVersion" character varying(32) NOT NULL,
+api-dev-container         |           CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1 FROM pg_catalog.pg_class c
+api-dev-container         |           JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+api-dev-container         |           WHERE n.nspname='public' AND
+api-dev-container         |                 c.relname='__EFMigrationsHistory'
+api-dev-container         |       )
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+nginx-dev-container       | 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+nginx-dev-container       | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx-dev-container       | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx-dev-container       | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx-dev-container       | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: using the "epoll" event method
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: nginx/1.27.1
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: built by gcc 13.2.1 20240309 (Alpine 13.2.1_git20240309) 
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: OS: Linux 6.10.4-linuxkit
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker processes
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 21
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 22
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 23
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 24
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 25
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 26
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 27
+nginx-dev-container       | 2024/12/20 10:08:09 [notice] 1#1: start worker process 28
+nginx-dev-container       | 2024/12/20 10:08:49 [error] 21#21: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.65.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.20.0.2:5173/", host: "localhost"
+nginx-dev-container       | 192.168.65.1 - - [20/Dec/2024:10:08:49 +0000] "GET / HTTP/1.1" 502 559 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "-"
+nginx-dev-container       | 2024/12/20 10:08:50 [error] 25#25: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.65.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.20.0.2:5173/favicon.ico", host: "localhost", referrer: "http://localhost/"
+nginx-dev-container       | 192.168.65.1 - - [20/Dec/2024:10:08:50 +0000] "GET /favicon.ico HTTP/1.1" 502 559 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "-"
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT "MigrationId", "ProductVersion"
+api-dev-container         |       FROM "__EFMigrationsHistory"
+postgresql-dev-container  | 2024-12-20 10:08:10.070 UTC [1] LOG:  starting PostgreSQL 15.10 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+postgresql-dev-container  | 2024-12-20 10:08:10.071 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgresql-dev-container  | 2024-12-20 10:08:10.071 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgresql-dev-container  | 2024-12-20 10:08:10.073 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgresql-dev-container  | 2024-12-20 10:08:10.080 UTC [29] LOG:  database system was shut down at 2024-12-20 10:02:33 UTC
+postgresql-dev-container  | 2024-12-20 10:08:10.092 UTC [1] LOG:  database system is ready to accept connections
+postgresql-dev-container  | 2024-12-20 10:08:10.737 UTC [33] FATAL:  database "Answear" does not exist
+frontend-dev-container    | > answear-client@0.0.0 preview
+frontend-dev-container    | > vite preview
+frontend-dev-container    | 
+frontend-dev-container    | ▲ [WARNING] Duplicate key "noUnusedLocals" in object literal [duplicate-object-key]
+frontend-dev-container    | 
+frontend-dev-container    |     tsconfig.json:20:4:
+frontend-dev-container    |       20 │     "noUnusedLocals": true,
+api-dev-container         |       ORDER BY "MigrationId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240717182240_Init db and add TargetGroup table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+frontend-dev-container    |          ╵     ~~~~~~~~~~~~~~~~
+frontend-dev-container    | 
+frontend-dev-container    |   The original key "noUnusedLocals" is here:
+frontend-dev-container    | 
+postgresql-dev-container  | 2024-12-20 10:08:10.749 UTC [34] FATAL:  database "Answear" does not exist
+frontend-dev-container    |     tsconfig.json:8:4:
+frontend-dev-container    |       8 │     "noUnusedLocals": false,
+frontend-dev-container    |         ╵     ~~~~~~~~~~~~~~~~
+frontend-dev-container    | 
+postgresql-dev-container  | 2024-12-20 10:08:10.752 UTC [35] FATAL:  database "Answear" does not exist
+frontend-dev-container    |   ➜  Local:   http://localhost:5173/
+frontend-dev-container    |   ➜  Network: use --host to expose
+api-dev-container         |       CREATE TABLE "tbl_TargetGroup" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(20) NOT NULL,
+api-dev-container         |           "Slug" character varying(20) NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_TargetGroup" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE UNIQUE INDEX "IX_tbl_TargetGroup_Slug" ON "tbl_TargetGroup" ("Slug");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240717182240_Init db and add TargetGroup table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240718170732_Add categories table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Categories" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(200) NOT NULL,
+api-dev-container         |           "Slug" character varying(200) NOT NULL,
+api-dev-container         |           "TargetGroupId" integer,
+api-dev-container         |           "ParentId" integer,
+api-dev-container         |           CONSTRAINT "PK_tbl_Categories" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Categories_tbl_Categories_ParentId" FOREIGN KEY ("ParentId") REFERENCES "tbl_Categories" ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Categories_tbl_TargetGroup_TargetGroupId" FOREIGN KEY ("TargetGroupId") REFERENCES "tbl_TargetGroup" ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Categories_ParentId" ON "tbl_Categories" ("ParentId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Categories_TargetGroupId" ON "tbl_Categories" ("TargetGroupId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240718170732_Add categories table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240719093723_Add isDeleted field to Target_tbl ang Category_tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_TargetGroup" ADD "IsDeleted" boolean NOT NULL DEFAULT FALSE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Categories" ADD "IsDeleted" boolean NOT NULL DEFAULT FALSE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240719093723_Add isDeleted field to Target_tbl ang Category_tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240719130159_Add identity tables'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetRoles" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(256),
+api-dev-container         |           "NormalizedName" character varying(256),
+api-dev-container         |           "ConcurrencyStamp" text,
+api-dev-container         |           CONSTRAINT "PK_AspNetRoles" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetUsers" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "FirstName" text NOT NULL,
+api-dev-container         |           "LastName" text NOT NULL,
+api-dev-container         |           "UserName" character varying(256),
+api-dev-container         |           "NormalizedUserName" character varying(256),
+api-dev-container         |           "Email" character varying(256),
+api-dev-container         |           "NormalizedEmail" character varying(256),
+api-dev-container         |           "EmailConfirmed" boolean NOT NULL,
+api-dev-container         |           "PasswordHash" text,
+api-dev-container         |           "SecurityStamp" text,
+api-dev-container         |           "ConcurrencyStamp" text,
+api-dev-container         |           "PhoneNumber" text,
+api-dev-container         |           "PhoneNumberConfirmed" boolean NOT NULL,
+api-dev-container         |           "TwoFactorEnabled" boolean NOT NULL,
+api-dev-container         |           "LockoutEnd" timestamp with time zone,
+api-dev-container         |           "LockoutEnabled" boolean NOT NULL,
+api-dev-container         |           "AccessFailedCount" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_AspNetUsers" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetRoleClaims" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "RoleId" integer NOT NULL,
+api-dev-container         |           "ClaimType" text,
+api-dev-container         |           "ClaimValue" text,
+api-dev-container         |           CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetUserClaims" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           "ClaimType" text,
+api-dev-container         |           "ClaimValue" text,
+api-dev-container         |           CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetUserLogins" (
+api-dev-container         |           "LoginProvider" character varying(128) NOT NULL,
+api-dev-container         |           "ProviderKey" character varying(128) NOT NULL,
+api-dev-container         |           "ProviderDisplayName" text,
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+api-dev-container         |           CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetUserRoles" (
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           "RoleId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+api-dev-container         |           CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "AspNetUserTokens" (
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           "LoginProvider" character varying(128) NOT NULL,
+api-dev-container         |           "Name" character varying(128) NOT NULL,
+api-dev-container         |           "Value" text,
+api-dev-container         |           CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+api-dev-container         |           CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240719130159_Add identity tables', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240719151927_Add Product and Discount'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Discounts" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(255) NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_Discounts" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_DiscountValues" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Percentage" numeric(5,2) NOT NULL,
+api-dev-container         |           "DiscountId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_DiscountValues" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_DiscountValues_tbl_Discounts_DiscountId" FOREIGN KEY ("DiscountId") REFERENCES "tbl_Discounts" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Products" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(255) NOT NULL,
+api-dev-container         |           "Description" character varying(500) NOT NULL,
+api-dev-container         |           "CategoryId" integer NOT NULL,
+api-dev-container         |           "Price" numeric(18,2) NOT NULL,
+api-dev-container         |           "DiscountValueId" integer,
+api-dev-container         |           CONSTRAINT "PK_tbl_Products" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Products_tbl_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "tbl_Categories" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_Products_tbl_DiscountValues_DiscountValueId" FOREIGN KEY ("DiscountValueId") REFERENCES "tbl_DiscountValues" ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Product_Photos" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" text NOT NULL,
+api-dev-container         |           "Priority" integer NOT NULL,
+api-dev-container         |           "ProductId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_Product_Photos" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Product_Photos_tbl_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "tbl_Products" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_DiscountValues_DiscountId" ON "tbl_DiscountValues" ("DiscountId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Product_Photos_ProductId" ON "tbl_Product_Photos" ("ProductId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Products_CategoryId" ON "tbl_Products" ("CategoryId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Products_DiscountValueId" ON "tbl_Products" ("DiscountValueId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240719151927_Add Product and Discount', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240719193810_Update Product table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" ALTER COLUMN "Description" TYPE character varying(1000);
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" ADD "ShortDescription" character varying(300) NOT NULL DEFAULT '';
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" ADD "Slug" character varying(200) NOT NULL DEFAULT '';
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240719193810_Update Product table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240720162716_Add Filters for categories'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_filterNames" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(255) NOT NULL,
+api-dev-container         |           "CategoryId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_filterNames" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_filterNames_tbl_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "tbl_Categories" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_filterValues" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(255) NOT NULL,
+api-dev-container         |           "FilterNameId" integer NOT NULL,
+api-dev-container         |           "FilterValueId" integer,
+api-dev-container         |           CONSTRAINT "PK_tbl_filterValues" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_filterValues_tbl_filterNames_FilterNameId" FOREIGN KEY ("FilterNameId") REFERENCES "tbl_filterNames" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_filterValues_tbl_filterValues_FilterValueId" FOREIGN KEY ("FilterValueId") REFERENCES "tbl_filterValues" ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE tbl_filters (
+api-dev-container         |           "FilterValueId" integer NOT NULL,
+api-dev-container         |           "CategoryId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_filters" PRIMARY KEY ("FilterValueId", "CategoryId"),
+api-dev-container         |           CONSTRAINT "FK_tbl_filters_tbl_Categories_CategoryId" FOREIGN KEY ("CategoryId") REFERENCES "tbl_Categories" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_filters_tbl_filterValues_FilterValueId" FOREIGN KEY ("FilterValueId") REFERENCES "tbl_filterValues" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_filterNames_CategoryId" ON "tbl_filterNames" ("CategoryId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_filters_CategoryId" ON tbl_filters ("CategoryId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_filterValues_FilterNameId" ON "tbl_filterValues" ("FilterNameId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_filterValues_FilterValueId" ON "tbl_filterValues" ("FilterValueId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240720162716_Add Filters for categories', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240720164749_Fix filters table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_filterValues" DROP CONSTRAINT "FK_tbl_filterValues_tbl_filterValues_FilterValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       DROP INDEX "IX_tbl_filterValues_FilterValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_filterValues" DROP COLUMN "FilterValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240720164749_Fix filters table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240720164940_Fix discount table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Discounts" ADD "MediaFile" text NOT NULL DEFAULT '';
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240720164940_Fix discount table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240721143559_Fix filter table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters DROP CONSTRAINT "FK_tbl_filters_tbl_Categories_CategoryId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters RENAME COLUMN "CategoryId" TO "ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER INDEX "IX_tbl_filters_CategoryId" RENAME TO "IX_tbl_filters_ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters ADD "CategoryEntityId" integer;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_filters_CategoryEntityId" ON tbl_filters ("CategoryEntityId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters ADD CONSTRAINT "FK_tbl_filters_tbl_Categories_CategoryEntityId" FOREIGN KEY ("CategoryEntityId") REFERENCES "tbl_Categories" ("Id");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters ADD CONSTRAINT "FK_tbl_filters_tbl_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "tbl_Products" ("Id") ON DELETE CASCADE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240721143559_Fix filter table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240721143842_Fix more filter table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters DROP CONSTRAINT "FK_tbl_filters_tbl_Categories_CategoryEntityId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       DROP INDEX "IX_tbl_filters_CategoryEntityId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters DROP COLUMN "CategoryEntityId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240721143842_Fix more filter table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240722090300_Add product variatio table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" DROP CONSTRAINT "FK_tbl_Products_tbl_DiscountValues_DiscountValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       DROP INDEX "IX_tbl_Products_DiscountValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" DROP COLUMN "DiscountValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" DROP COLUMN "Price";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" DROP COLUMN "ShortDescription";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_ProductVariations" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Slug" character varying(200) NOT NULL,
+api-dev-container         |           "ProductId" integer NOT NULL,
+api-dev-container         |           "ShortDescription" character varying(300) NOT NULL,
+api-dev-container         |           "Color" character varying(100) NOT NULL,
+api-dev-container         |           "Price" numeric(18,2) NOT NULL,
+api-dev-container         |           "DiscountValueId" integer,
+api-dev-container         |           CONSTRAINT "PK_tbl_ProductVariations" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_ProductVariations_tbl_DiscountValues_DiscountValueId" FOREIGN KEY ("DiscountValueId") REFERENCES "tbl_DiscountValues" ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_ProductVariations_tbl_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "tbl_Products" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_ProductVariations_DiscountValueId" ON "tbl_ProductVariations" ("DiscountValueId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_ProductVariations_ProductId" ON "tbl_ProductVariations" ("ProductId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240722090300_Add product variatio table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240722090733_update product variations and photos table'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Product_Photos" DROP CONSTRAINT "FK_tbl_Product_Photos_tbl_Products_ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Product_Photos" RENAME COLUMN "ProductId" TO "ProductVariationId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER INDEX "IX_tbl_Product_Photos_ProductId" RENAME TO "IX_tbl_Product_Photos_ProductVariationId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Product_Photos" ADD CONSTRAINT "FK_tbl_Product_Photos_tbl_ProductVariations_ProductVariationId" FOREIGN KEY ("ProductVariationId") REFERENCES "tbl_ProductVariations" ("Id") ON DELETE CASCADE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240722090733_update product variations and photos table', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240722094338_update product variations drop color'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_ProductVariations" DROP COLUMN "Color";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240722094338_update product variations drop color', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240722194734_update products tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters DROP CONSTRAINT "FK_tbl_filters_tbl_Products_ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Products" DROP COLUMN "Slug";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters RENAME COLUMN "ProductId" TO "ProductVariationId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER INDEX "IX_tbl_filters_ProductId" RENAME TO "IX_tbl_filters_ProductVariationId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE UNIQUE INDEX "IX_tbl_ProductVariations_Slug" ON "tbl_ProductVariations" ("Slug");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE tbl_filters ADD CONSTRAINT "FK_tbl_filters_tbl_ProductVariations_ProductVariationId" FOREIGN KEY ("ProductVariationId") REFERENCES "tbl_ProductVariations" ("Id") ON DELETE CASCADE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240722194734_update products tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240727171214_Add atribure for ProductVariations'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_ProductVariations" DROP CONSTRAINT "FK_tbl_ProductVariations_tbl_DiscountValues_DiscountValueId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_ProductVariations" ADD CONSTRAINT "FK_tbl_ProductVariations_tbl_DiscountValues_DiscountValueId" FOREIGN KEY ("DiscountValueId") REFERENCES "tbl_DiscountValues" ("Id") ON DELETE SET NULL;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240727171214_Add atribure for ProductVariations', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20240803112954_update user entity'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "AspNetUsers" ALTER COLUMN "LastName" DROP NOT NULL;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "AspNetUsers" ALTER COLUMN "FirstName" DROP NOT NULL;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20240803112954_update user entity', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20241113104540_Add favorite products tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_FavoriteProducts" (
+api-dev-container         |           "ProductId" integer NOT NULL,
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_FavoriteProducts" PRIMARY KEY ("ProductId", "UserId"),
+api-dev-container         |           CONSTRAINT "FK_tbl_FavoriteProducts_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_FavoriteProducts_tbl_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "tbl_Products" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_FavoriteProducts_UserId" ON "tbl_FavoriteProducts" ("UserId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20241113104540_Add favorite products tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20241115105933_Add basket tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Basket" (
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           "ProductVariationId" integer NOT NULL,
+api-dev-container         |           "ProductId" integer NOT NULL,
+api-dev-container         |           "Count" integer NOT NULL,
+api-dev-container         |           "DateCreated" timestamp with time zone NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_Basket" PRIMARY KEY ("UserId", "ProductVariationId"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Basket_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_Basket_tbl_ProductVariations_ProductId" FOREIGN KEY ("ProductId") REFERENCES "tbl_ProductVariations" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Basket_ProductId" ON "tbl_Basket" ("ProductId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20241115105933_Add basket tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20241115110519_Update basket tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Basket" DROP CONSTRAINT "FK_tbl_Basket_tbl_ProductVariations_ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       DROP INDEX "IX_tbl_Basket_ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Basket" DROP COLUMN "ProductId";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Basket_ProductVariationId" ON "tbl_Basket" ("ProductVariationId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       ALTER TABLE "tbl_Basket" ADD CONSTRAINT "FK_tbl_Basket_tbl_ProductVariations_ProductVariationId" FOREIGN KEY ("ProductVariationId") REFERENCES "tbl_ProductVariations" ("Id") ON DELETE CASCADE;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20241115110519_Update basket tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20241115111443_Add some orders tbls'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_OrderContactInfo" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "FirstName" character varying(200) NOT NULL,
+api-dev-container         |           "LastName" character varying(200) NOT NULL,
+api-dev-container         |           "Phone" character varying(200) NOT NULL,
+api-dev-container         |           "Email" character varying(200) NOT NULL,
+api-dev-container         |           "City" character varying(200) NOT NULL,
+api-dev-container         |           "Address" character varying(200) NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_OrderContactInfo" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_OrderStatus" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "Name" character varying(255) NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_OrderStatus" PRIMARY KEY ("Id")
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20241115111443_Add some orders tbls', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Migrations[20402]
+api-dev-container         |       Applying migration '20241115114019_Add order tbl'.
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_Orders" (
+api-dev-container         |           "Id" integer GENERATED BY DEFAULT AS IDENTITY,
+api-dev-container         |           "UserId" integer NOT NULL,
+api-dev-container         |           "OrderStatusId" integer NOT NULL,
+api-dev-container         |           "OrderContactInfoId" integer NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_Orders" PRIMARY KEY ("Id"),
+api-dev-container         |           CONSTRAINT "FK_tbl_Orders_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_Orders_tbl_OrderContactInfo_OrderContactInfoId" FOREIGN KEY ("OrderContactInfoId") REFERENCES "tbl_OrderContactInfo" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_Orders_tbl_OrderStatus_OrderStatusId" FOREIGN KEY ("OrderStatusId") REFERENCES "tbl_OrderStatus" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE TABLE "tbl_OrderItems" (
+api-dev-container         |           "ProductVariationId" integer NOT NULL,
+api-dev-container         |           "OrderId" integer NOT NULL,
+api-dev-container         |           "Count" integer NOT NULL,
+api-dev-container         |           "Price" numeric NOT NULL,
+api-dev-container         |           CONSTRAINT "PK_tbl_OrderItems" PRIMARY KEY ("OrderId", "ProductVariationId"),
+api-dev-container         |           CONSTRAINT "FK_tbl_OrderItems_tbl_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "tbl_Orders" ("Id") ON DELETE CASCADE,
+api-dev-container         |           CONSTRAINT "FK_tbl_OrderItems_tbl_ProductVariations_ProductVariationId" FOREIGN KEY ("ProductVariationId") REFERENCES "tbl_ProductVariations" ("Id") ON DELETE CASCADE
+api-dev-container         |       );
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_OrderItems_ProductVariationId" ON "tbl_OrderItems" ("ProductVariationId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Orders_OrderContactInfoId" ON "tbl_Orders" ("OrderContactInfoId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Orders_OrderStatusId" ON "tbl_Orders" ("OrderStatusId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       CREATE INDEX "IX_tbl_Orders_UserId" ON "tbl_Orders" ("UserId");
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+api-dev-container         |       VALUES ('20241115114019_Add order tbl', '8.0.7');
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_OrderStatus" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p0)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p1)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p2)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p3)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p4)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_OrderStatus" ("Name")
+api-dev-container         |       VALUES (@p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "AspNetUserRoles" AS a)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+api-dev-container         |       FROM "AspNetRoles" AS a
+api-dev-container         |       WHERE a."NormalizedName" = @__normalizedName_0
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "AspNetRoles" ("ConcurrencyStamp", "Name", "NormalizedName")
+api-dev-container         |       VALUES (@p0, @p1, @p2)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+api-dev-container         |       FROM "AspNetRoles" AS a
+api-dev-container         |       WHERE a."NormalizedName" = @__normalizedName_0
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "AspNetRoles" ("ConcurrencyStamp", "Name", "NormalizedName")
+api-dev-container         |       VALUES (@p0, @p1, @p2)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "AspNetUsers" AS a)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+api-dev-container         |       FROM "AspNetUsers" AS a
+api-dev-container         |       WHERE a."NormalizedUserName" = @__normalizedUserName_0
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?', @p5='?', @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (DbType = Boolean), @p15='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "AspNetUsers" ("AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+api-dev-container         |       VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+api-dev-container         |       FROM "AspNetRoles" AS a
+api-dev-container         |       WHERE a."NormalizedName" = @__normalizedRoleName_0
+api-dev-container         |       LIMIT 2
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."UserId", a."RoleId"
+api-dev-container         |       FROM "AspNetUserRoles" AS a
+api-dev-container         |       WHERE a."UserId" = @__p_0 AND a."RoleId" = @__p_1
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+api-dev-container         |       FROM "AspNetRoles" AS a
+api-dev-container         |       WHERE a."NormalizedName" = @__normalizedRoleName_0
+api-dev-container         |       LIMIT 2
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+api-dev-container         |       FROM "AspNetUsers" AS a
+api-dev-container         |       WHERE a."NormalizedUserName" = @__normalizedUserName_0
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p18='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?', @p19='?', @p4='?', @p5='?' (DbType = Boolean), @p6='?', @p7='?', @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTime), @p10='?', @p11='?', @p12='?', @p13='?', @p14='?' (DbType = Boolean), @p15='?', @p16='?' (DbType = Boolean), @p17='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+api-dev-container         |       VALUES (@p0, @p1);
+api-dev-container         |       UPDATE "AspNetUsers" SET "AccessFailedCount" = @p2, "ConcurrencyStamp" = @p3, "Email" = @p4, "EmailConfirmed" = @p5, "FirstName" = @p6, "LastName" = @p7, "LockoutEnabled" = @p8, "LockoutEnd" = @p9, "NormalizedEmail" = @p10, "NormalizedUserName" = @p11, "PasswordHash" = @p12, "PhoneNumber" = @p13, "PhoneNumberConfirmed" = @p14, "SecurityStamp" = @p15, "TwoFactorEnabled" = @p16, "UserName" = @p17
+api-dev-container         |       WHERE "Id" = @p18 AND "ConcurrencyStamp" = @p19;
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_TargetGroup" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?', @p2='?', @p3='?' (DbType = Boolean), @p4='?', @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_TargetGroup" ("IsDeleted", "Name", "Slug")
+api-dev-container         |       VALUES (@p0, @p1, @p2)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_TargetGroup" ("IsDeleted", "Name", "Slug")
+api-dev-container         |       VALUES (@p3, @p4, @p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_TargetGroup" ("IsDeleted", "Name", "Slug")
+api-dev-container         |       VALUES (@p6, @p7, @p8)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_Discounts" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_Discounts" ("MediaFile", "Name")
+api-dev-container         |       VALUES (@p0, @p1)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int32), @p3='?' (DbType = Decimal), @p4='?' (DbType = Int32), @p5='?' (DbType = Decimal), @p6='?' (DbType = Int32), @p7='?' (DbType = Decimal), @p8='?' (DbType = Int32), @p9='?' (DbType = Decimal), @p10='?' (DbType = Int32), @p11='?' (DbType = Decimal)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_DiscountValues" ("DiscountId", "Percentage")
+api-dev-container         |       VALUES (@p2, @p3)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_DiscountValues" ("DiscountId", "Percentage")
+api-dev-container         |       VALUES (@p4, @p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_DiscountValues" ("DiscountId", "Percentage")
+api-dev-container         |       VALUES (@p6, @p7)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_DiscountValues" ("DiscountId", "Percentage")
+api-dev-container         |       VALUES (@p8, @p9)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_DiscountValues" ("DiscountId", "Percentage")
+api-dev-container         |       VALUES (@p10, @p11)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_Categories" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."IsDeleted", t."Name", t."Slug"
+api-dev-container         |       FROM "tbl_TargetGroup" AS t
+api-dev-container         |       WHERE t."Name" <> 'Діти'
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?', @p7='?' (DbType = Int32), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = Int32), @p13='?', @p14='?' (DbType = Int32), @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Int32), @p18='?', @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?', @p22='?' (DbType = Int32), @p23='?', @p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?', @p27='?' (DbType = Int32), @p28='?', @p29='?' (DbType = Int32), @p30='?' (DbType = Boolean), @p31='?', @p32='?' (DbType = Int32), @p33='?', @p34='?' (DbType = Int32), @p35='?' (DbType = Boolean), @p36='?', @p37='?' (DbType = Int32), @p38='?', @p39='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p0, @p1, @p2, @p3, @p4)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p5, @p6, @p7, @p8, @p9)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p10, @p11, @p12, @p13, @p14)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p15, @p16, @p17, @p18, @p19)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p20, @p21, @p22, @p23, @p24)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p25, @p26, @p27, @p28, @p29)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p30, @p31, @p32, @p33, @p34)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p35, @p36, @p37, @p38, @p39)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."IsDeleted", t."Name", t."ParentId", t."Slug", t."TargetGroupId", t0."Id", t0."IsDeleted", t0."Name", t0."Slug"
+api-dev-container         |       FROM "tbl_Categories" AS t
+api-dev-container         |       LEFT JOIN "tbl_TargetGroup" AS t0 ON t."TargetGroupId" = t0."Id"
+api-dev-container         |       WHERE t."ParentId" IS NULL
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?', @p7='?' (DbType = Int32), @p8='?', @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?', @p12='?' (DbType = Int32), @p13='?', @p14='?' (DbType = Int32), @p15='?' (DbType = Boolean), @p16='?', @p17='?' (DbType = Int32), @p18='?', @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?', @p22='?' (DbType = Int32), @p23='?', @p24='?' (DbType = Int32), @p25='?' (DbType = Boolean), @p26='?', @p27='?' (DbType = Int32), @p28='?', @p29='?' (DbType = Int32), @p30='?' (DbType = Boolean), @p31='?', @p32='?' (DbType = Int32), @p33='?', @p34='?' (DbType = Int32), @p35='?' (DbType = Boolean), @p36='?', @p37='?' (DbType = Int32), @p38='?', @p39='?' (DbType = Int32), @p40='?' (DbType = Boolean), @p41='?', @p42='?' (DbType = Int32), @p43='?', @p44='?' (DbType = Int32), @p45='?' (DbType = Boolean), @p46='?', @p47='?' (DbType = Int32), @p48='?', @p49='?' (DbType = Int32), @p50='?' (DbType = Boolean), @p51='?', @p52='?' (DbType = Int32), @p53='?', @p54='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p0, @p1, @p2, @p3, @p4)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p5, @p6, @p7, @p8, @p9)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p10, @p11, @p12, @p13, @p14)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p15, @p16, @p17, @p18, @p19)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p20, @p21, @p22, @p23, @p24)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p25, @p26, @p27, @p28, @p29)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p30, @p31, @p32, @p33, @p34)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p35, @p36, @p37, @p38, @p39)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p40, @p41, @p42, @p43, @p44)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p45, @p46, @p47, @p48, @p49)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Categories" ("IsDeleted", "Name", "ParentId", "Slug", "TargetGroupId")
+api-dev-container         |       VALUES (@p50, @p51, @p52, @p53, @p54)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_filterValues" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."IsDeleted", t."Name", t."ParentId", t."Slug", t."TargetGroupId"
+api-dev-container         |       FROM "tbl_Categories" AS t
+api-dev-container         |       LEFT JOIN "tbl_TargetGroup" AS t0 ON t."TargetGroupId" = t0."Id"
+api-dev-container         |       WHERE t0."Name" = 'Вона' AND t."Name" = 'Джинси'
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@__categoryId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."CategoryId", t."Description", t."Name"
+api-dev-container         |       FROM "tbl_Products" AS t
+api-dev-container         |       WHERE t."CategoryId" = @__categoryId_0
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?' (DbType = Int32), @p7='?', @p8='?' (DbType = Int32), @p9='?', @p10='?' (DbType = Int32), @p11='?', @p12='?' (DbType = Int32), @p13='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p0, @p1)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p2, @p3)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p4, @p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p6, @p7)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p8, @p9)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p10, @p11)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterNames" ("CategoryId", "Name")
+api-dev-container         |       VALUES (@p12, @p13)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?' (DbType = Int32), @p7='?', @p8='?' (DbType = Int32), @p9='?', @p10='?' (DbType = Int32), @p11='?', @p12='?' (DbType = Int32), @p13='?', @p14='?' (DbType = Int32), @p15='?', @p16='?' (DbType = Int32), @p17='?', @p18='?' (DbType = Int32), @p19='?', @p20='?' (DbType = Int32), @p21='?', @p22='?' (DbType = Int32), @p23='?', @p24='?' (DbType = Int32), @p25='?', @p26='?' (DbType = Int32), @p27='?', @p28='?' (DbType = Int32), @p29='?', @p30='?' (DbType = Int32), @p31='?', @p32='?' (DbType = Int32), @p33='?', @p34='?' (DbType = Int32), @p35='?', @p36='?' (DbType = Int32), @p37='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p0, @p1)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p2, @p3)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p4, @p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p6, @p7)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p8, @p9)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p10, @p11)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p12, @p13)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p14, @p15)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p16, @p17)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p18, @p19)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p20, @p21)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p22, @p23)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p24, @p25)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p26, @p27)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p28, @p29)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p30, @p31)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p32, @p33)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p34, @p35)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_filterValues" ("FilterNameId", "Name")
+api-dev-container         |       VALUES (@p36, @p37)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT EXISTS (
+api-dev-container         |           SELECT 1
+api-dev-container         |           FROM "tbl_Products" AS t)
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."IsDeleted", t."Name", t."ParentId", t."Slug", t."TargetGroupId"
+api-dev-container         |       FROM "tbl_Categories" AS t
+api-dev-container         |       LEFT JOIN "tbl_TargetGroup" AS t0 ON t."TargetGroupId" = t0."Id"
+api-dev-container         |       WHERE t."Name" = 'Джинси' AND t0."Name" = 'Він'
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       SELECT t."Id", t."IsDeleted", t."Name", t."ParentId", t."Slug", t."TargetGroupId"
+api-dev-container         |       FROM "tbl_Categories" AS t
+api-dev-container         |       LEFT JOIN "tbl_TargetGroup" AS t0 ON t."TargetGroupId" = t0."Id"
+api-dev-container         |       WHERE t."Name" = 'Джинси' AND t0."Name" = 'Вона'
+api-dev-container         |       LIMIT 1
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?', @p5='?', @p6='?' (DbType = Int32), @p7='?', @p8='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_Products" ("CategoryId", "Description", "Name")
+api-dev-container         |       VALUES (@p0, @p1, @p2)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Products" ("CategoryId", "Description", "Name")
+api-dev-container         |       VALUES (@p3, @p4, @p5)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Products" ("CategoryId", "Description", "Name")
+api-dev-container         |       VALUES (@p6, @p7, @p8)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p9='?' (DbType = Int32), @p10='?' (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?', @p13='?', @p14='?' (DbType = Int32), @p15='?' (DbType = Decimal), @p16='?' (DbType = Int32), @p17='?', @p18='?', @p19='?' (DbType = Int32), @p20='?' (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?', @p23='?', @p24='?' (DbType = Int32), @p25='?' (DbType = Decimal), @p26='?' (DbType = Int32), @p27='?', @p28='?', @p29='?' (DbType = Int32), @p30='?' (DbType = Decimal), @p31='?' (DbType = Int32), @p32='?', @p33='?', @p34='?' (DbType = Int32), @p35='?' (DbType = Decimal), @p36='?' (DbType = Int32), @p37='?', @p38='?'], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p9, @p10, @p11, @p12, @p13)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p14, @p15, @p16, @p17, @p18)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p19, @p20, @p21, @p22, @p23)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p24, @p25, @p26, @p27, @p28)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p29, @p30, @p31, @p32, @p33)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_ProductVariations" ("DiscountValueId", "Price", "ProductId", "ShortDescription", "Slug")
+api-dev-container         |       VALUES (@p34, @p35, @p36, @p37, @p38)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+api-dev-container         |       Executed DbCommand (2ms) [Parameters=[@p39='?', @p40='?' (DbType = Int32), @p41='?' (DbType = Int32), @p42='?', @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?', @p46='?' (DbType = Int32), @p47='?' (DbType = Int32), @p48='?', @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?', @p52='?' (DbType = Int32), @p53='?' (DbType = Int32), @p54='?', @p55='?' (DbType = Int32), @p56='?' (DbType = Int32), @p57='?', @p58='?' (DbType = Int32), @p59='?' (DbType = Int32), @p60='?', @p61='?' (DbType = Int32), @p62='?' (DbType = Int32), @p63='?', @p64='?' (DbType = Int32), @p65='?' (DbType = Int32), @p66='?', @p67='?' (DbType = Int32), @p68='?' (DbType = Int32), @p69='?', @p70='?' (DbType = Int32), @p71='?' (DbType = Int32), @p72='?', @p73='?' (DbType = Int32), @p74='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p39, @p40, @p41)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p42, @p43, @p44)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p45, @p46, @p47)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p48, @p49, @p50)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p51, @p52, @p53)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p54, @p55, @p56)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p57, @p58, @p59)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p60, @p61, @p62)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p63, @p64, @p65)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p66, @p67, @p68)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p69, @p70, @p71)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         |       INSERT INTO "tbl_Product_Photos" ("Name", "Priority", "ProductVariationId")
+api-dev-container         |       VALUES (@p72, @p73, @p74)
+api-dev-container         |       RETURNING "Id";
+api-dev-container         | warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+api-dev-container         |       No XML encryptor configured. Key {7d427d9f-6f6f-46e5-9507-586b6caacdd4} may be persisted to storage in unencrypted form.
+api-dev-container         | warn: Microsoft.AspNetCore.Hosting.Diagnostics[15]
+api-dev-container         |       Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://+:80'.
+api-dev-container         | info: Microsoft.Hosting.Lifetime[14]
+api-dev-container         |       Now listening on: http://[::]:80
+api-dev-container         | info: Microsoft.Hosting.Lifetime[0]
+api-dev-container         |       Application started. Press Ctrl+C to shut down.
+api-dev-container         | info: Microsoft.Hosting.Lifetime[0]
+api-dev-container         |       Hosting environment: Development
+api-dev-container         | info: Microsoft.Hosting.Lifetime[0]
+api-dev-container         |       Content root path: /app
