@@ -1,0 +1,40 @@
+import { VariantProps, cva } from "class-variance-authority";
+import { classNames } from "utils/classNames.ts";
+
+import React from "react";
+
+const buttonVariants = cva("h-[44px] max-h-[44px] gap-2 inline-flex items-center justify-center text-sm font-semibold", {
+    variants: {
+        variant: {
+            default: "bg-black text-white transition hover:bg-black/80 duration-400 ease-in-out",
+            white: "bg-white text-black text-base font-normal  transition hover:bg-black/80 hover:text-white duration-500 ease-in-out",
+            primary: "bg-white text-black hover:bg-black hover:text-white transition duration-400 ease-in-out",
+            underline: "text-black h-auto underline",
+            icon: "text-black bg-white px-0 py-0",
+            iconTransparent: "px-0 py-0",
+            normalBorder:
+                "text-black bg-white border border-black transition-all duration-300 ease-in-out hover:shadow-[inset_0_0_0_1px_rgba(0,0,0,1)]",
+        },
+        size: {
+            default: "w-full max-w-[140px] px-2",
+            auto: "w-auto px-2",
+            full: "w-full",
+            iconsm: "w-6 h-6",
+            iconmd: "w-8 h-8",
+            iconlg: "w-12 h-12 border border-black",
+            span: "px-0 py-0",
+        },
+    },
+    defaultVariants: {
+        variant: "default",
+        size: "default",
+    },
+});
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...props }, ref) => {
+    return <button ref={ref} className={classNames(buttonVariants({ variant, size }), className)} {...props} />;
+});
+
+export default Button;
